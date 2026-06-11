@@ -1,0 +1,19 @@
+{
+  "slug": "water",
+  "title": "水的故事",
+  "subtitle": "汉字里的流动与浩瀚",
+  "cover": "/covers/water-placeholder.svg",
+  "intro": "(占位)上古先民临水而居,水在汉字里留下了无数足迹。从一滴水到江河湖海,每一个字都是一段流动的记忆。",
+  "sections": [
+    {
+      "heading": "源头",
+      "narrative": "(占位)一滴水如何成形,先民如何用三笔勾勒出流动。",
+      "chars": ["水", "雨"]
+    },
+    {
+      "heading": "奔流",
+      "narrative": "(占位)水汇成川,川汇成河。",
+      "chars": ["川", "河"]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "human",
+  "title": "人的姿态",
+  "subtitle": "汉字里的身体语言",
+  "cover": "/covers/human-placeholder.svg",
+  "intro": "(占位)人是汉字最古老的主题之一。立、大、从——每一个姿态都是一个故事。",
+  "sections": [
+    {
+      "heading": "直立",
+      "narrative": "(占位)人站起来,文字也站了起来。",
+      "chars": ["人", "大", "立"]
+    },
+    {
+      "heading": "相随",
+      "narrative": "(占位)从一个人到一群人。",
+      "chars": ["从"]
+    }
+  ]
+}

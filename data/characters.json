@@ -1,0 +1,182 @@
+[
+  {
+    "char": "水",
+    "pinyin": ["shuǐ"],
+    "radical": "水",
+    "strokes": 4,
+    "meanings": ["无色无味的液体", "江河湖海的总称"],
+    "etymology": "(占位)甲骨文像水流的形状,中间一道主流,两侧点为水花。",
+    "scripts": {
+      "oracle":   { "available": true,  "font": "oracle" },
+      "bronze":   { "available": true,  "font": "bronze" },
+      "seal":     { "available": true,  "font": "seal" },
+      "clerical": { "available": true,  "font": "clerical" },
+      "regular":  { "available": true,  "font": null }
+    },
+    "morph": { "enabled": false, "svgDir": null },
+    "topics": ["water"],
+    "related": ["川", "河", "雨"]
+  },
+  {
+    "char": "川",
+    "pinyin": ["chuān"],
+    "radical": "川",
+    "strokes": 3,
+    "meanings": ["河流"],
+    "etymology": "(占位)甲骨文像两岸夹一水的形状。",
+    "scripts": {
+      "oracle":   { "available": true,  "font": "oracle" },
+      "bronze":   { "available": true,  "font": "bronze" },
+      "seal":     { "available": true,  "font": "seal" },
+      "clerical": { "available": true,  "font": "clerical" },
+      "regular":  { "available": true,  "font": null }
+    },
+    "morph": { "enabled": false, "svgDir": null },
+    "topics": ["water"],
+    "related": ["水", "河"]
+  },
+  {
+    "char": "河",
+    "pinyin": ["hé"],
+    "radical": "氵",
+    "strokes": 8,
+    "meanings": ["天然或人工的水道", "特指黄河"],
+    "etymology": "(占位)形声字,水形可声。",
+    "scripts": {
+      "oracle":   { "available": false, "font": null },
+      "bronze":   { "available": true,  "font": "bronze" },
+      "seal":     { "available": true,  "font": "seal" },
+      "clerical": { "available": true,  "font": "clerical" },
+      "regular":  { "available": true,  "font": null }
+    },
+    "morph": { "enabled": false, "svgDir": null },
+    "topics": ["water"],
+    "related": ["水", "川"]
+  },
+  {
+    "char": "雨",
+    "pinyin": ["yǔ"],
+    "radical": "雨",
+    "strokes": 8,
+    "meanings": ["从云层降落的水滴"],
+    "etymology": "(占位)甲骨文上为天,下数点为水滴。",
+    "scripts": {
+      "oracle":   { "available": true,  "font": "oracle" },
+      "bronze":   { "available": true,  "font": "bronze" },
+      "seal":     { "available": true,  "font": "seal" },
+      "clerical": { "available": true,  "font": "clerical" },
+      "regular":  { "available": true,  "font": null }
+    },
+    "morph": { "enabled": false, "svgDir": null },
+    "topics": ["water"],
+    "related": ["水"]
+  },
+  {
+    "char": "人",
+    "pinyin": ["rén"],
+    "radical": "人",
+    "strokes": 2,
+    "meanings": ["能制造工具进行劳动的高等动物"],
+    "etymology": "(占位)甲骨文像人侧身站立之形。",
+    "scripts": {
+      "oracle":   { "available": true,  "font": "oracle" },
+      "bronze":   { "available": true,  "font": "bronze" },
+      "seal":     { "available": true,  "font": "seal" },
+      "clerical": { "available": true,  "font": "clerical" },
+      "regular":  { "available": true,  "font": null }
+    },
+    "morph": { "enabled": false, "svgDir": null },
+    "topics": ["human"],
+    "related": ["大", "立", "从"]
+  },
+  {
+    "char": "大",
+    "pinyin": ["dà", "dài"],
+    "radical": "大",
+    "strokes": 3,
+    "meanings": ["在面积、体积、容量、数量等方面超过一般"],
+    "etymology": "(占位)甲骨文像人正面张开手脚之形。",
+    "scripts": {
+      "oracle":   { "available": true,  "font": "oracle" },
+      "bronze":   { "available": true,  "font": "bronze" },
+      "seal":     { "available": true,  "font": "seal" },
+      "clerical": { "available": true,  "font": "clerical" },
+      "regular":  { "available": true,  "font": null }
+    },
+    "morph": { "enabled": false, "svgDir": null },
+    "topics": ["human"],
+    "related": ["人", "立"]
+  },
+  {
+    "char": "立",
+    "pinyin": ["lì"],
+    "radical": "立",
+    "strokes": 5,
+    "meanings": ["站立", "直立"],
+    "etymology": "(占位)甲骨文像人站在地上之形。",
+    "scripts": {
+      "oracle":   { "available": true,  "font": "oracle" },
+      "bronze":   { "available": true,  "font": "bronze" },
+      "seal":     { "available": true,  "font": "seal" },
+      "clerical": { "available": true,  "font": "clerical" },
+      "regular":  { "available": true,  "font": null }
+    },
+    "morph": { "enabled": false, "svgDir": null },
+    "topics": ["human"],
+    "related": ["人", "大"]
+  },
+  {
+    "char": "从",
+    "pinyin": ["cóng"],
+    "radical": "人",
+    "strokes": 4,
+    "meanings": ["跟随", "顺从"],
+    "etymology": "(占位)甲骨文为两人一前一后,会跟随之意。",
+    "scripts": {
+      "oracle":   { "available": true,  "font": "oracle" },
+      "bronze":   { "available": true,  "font": "bronze" },
+      "seal":     { "available": true,  "font": "seal" },
+      "clerical": { "available": true,  "font": "clerical" },
+      "regular":  { "available": true,  "font": null }
+    },
+    "morph": { "enabled": false, "svgDir": null },
+    "topics": ["human"],
+    "related": ["人"]
+  },
+  {
+    "char": "山",
+    "pinyin": ["shān"],
+    "radical": "山",
+    "strokes": 3,
+    "meanings": ["地面形成的高耸部分"],
+    "etymology": "(占位)甲骨文象三峰并立之形。",
+    "scripts": {
+      "oracle":   { "available": true,  "font": "oracle" },
+      "bronze":   { "available": true,  "font": "bronze" },
+      "seal":     { "available": true,  "font": "seal" },
+      "clerical": { "available": true,  "font": "clerical" },
+      "regular":  { "available": true,  "font": null }
+    },
+    "morph": { "enabled": false, "svgDir": null },
+    "topics": [],
+    "related": []
+  },
+  {
+    "char": "日",
+    "pinyin": ["rì"],
+    "radical": "日",
+    "strokes": 4,
+    "meanings": ["太阳", "白天"],
+    "etymology": "(占位)甲骨文象太阳之形,中一点表示太阳的实体。",
+    "scripts": {
+      "oracle":   { "available": true,  "font": "oracle" },
+      "bronze":   { "available": true,  "font": "bronze" },
+      "seal":     { "available": true,  "font": "seal" },
+      "clerical": { "available": true,  "font": "clerical" },
+      "regular":  { "available": true,  "font": null }
+    },
+    "morph": { "enabled": false, "svgDir": null },
+    "topics": [],
+    "related": []
+  }
+]
