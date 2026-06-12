@@ -67,6 +67,7 @@ npm run typecheck        # tsc --noEmit
 npm run test             # vitest run(当前 8 个测试)
 npm run validate-data    # Zod 校验 data/
 npm run build:search-index  # 单独重建 MiniSearch 索引
+npm run build:glyphs        # 单独重建字形 SVG
 ```
 
 ## 开发约定
@@ -77,6 +78,8 @@ npm run build:search-index  # 单独重建 MiniSearch 索引
 - 改动 `data/characters.json` 或 `data/topics/*.json` 后,必须运行 `npm run validate-data` 并通过。
 - 字符的 `related` 字段中所列汉字必须存在于 `characters.json`,否则校验会失败。
 - 新增字符或专题,先在 `lib/types.ts` 的 Zod schema 中确认字段约束,再写数据。
+- 改动 `data/characters.json` 后,字形产物需要重建:`npm run build:glyphs`。`public/glyphs/` 是构建产物,被 `.gitignore` 忽略。
+- 新接入字体须放到 `assets/fonts/` 并在 `assets/fonts/LICENSES/` 写入对应许可文本;在 `scripts/build-glyphs.ts` 的 `FONT_MAP` 中登记。
 
 ### 路由
 

@@ -17,6 +17,14 @@ npm run build:glyphs  # 从 assets/fonts/ 生成字形 SVG
 npm run build         # glyphs → search-index → next build
 ```
 
+### 字形构建
+
+```bash
+npm run build:glyphs
+```
+
+`scripts/build-glyphs.ts` 会读 `assets/fonts/` 下的开源中文字体,为 `data/characters.json` 中的每个字 × 每个字体阶段生成 `public/glyphs/<字>/<阶段>.svg`,缺字阶段输出占位 SVG。该步骤已串入 `npm run build`。
+
 ## 设计文档
 
 见 [`docs/specs/2026-06-11-hanzi-atlas-design.md`](docs/specs/2026-06-11-hanzi-atlas-design.md)。
