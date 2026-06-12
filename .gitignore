@@ -5,3 +5,4 @@ out
 *.tsbuildinfo
 next-env.d.ts
 data/search-index.json
+public/search-index.json

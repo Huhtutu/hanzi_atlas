@@ -31,8 +31,9 @@ async function main() {
   const chars = z.array(Character).parse(raw);
   const docs = buildDocs(chars);
   const ms = buildIndex(docs);
-  const out = { docs, index: ms.toJSON() };
-  await writeFile(join(process.cwd(), "data/search-index.json"), JSON.stringify(out));
+  const payload = JSON.stringify({ docs, index: ms.toJSON() });
+  await writeFile(join(process.cwd(), "data/search-index.json"), payload);
+  await writeFile(join(process.cwd(), "public/search-index.json"), payload);
   console.log(`✓ wrote search-index.json (${docs.length} docs)`);
 }
 
