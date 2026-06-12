@@ -5,13 +5,23 @@
     "radical": "水",
     "strokes": 4,
     "meanings": ["无色无味的液体", "江河湖海的总称"],
-    "etymology": "(占位)甲骨文像水流的形状,中间一道主流,两侧点为水花。",
+    "etymology": {
+      "intro": "(占位)甲骨文像水流的形状,中间一道主流,两侧点为水花。",
+      "stages": [
+        { "script": "oracle",   "text": "(占位)甲骨阶段。" },
+        { "script": "bronze",   "text": "(占位)金文阶段。" },
+        { "script": "seal",     "text": "(占位)小篆阶段。" },
+        { "script": "clerical", "text": "(占位)隶书阶段。" },
+        { "script": "regular",  "text": "(占位)楷书阶段。" }
+      ],
+      "modern": "(占位)现代用法。"
+    },
     "scripts": {
-      "oracle":   { "available": true,  "font": "oracle" },
-      "bronze":   { "available": true,  "font": "bronze" },
-      "seal":     { "available": true,  "font": "seal" },
-      "clerical": { "available": true,  "font": "clerical" },
-      "regular":  { "available": true,  "font": null }
+      "oracle":   { "available": false, "glyphSrc": null },
+      "bronze":   { "available": false, "glyphSrc": null },
+      "seal":     { "available": false, "glyphSrc": null },
+      "clerical": { "available": false, "glyphSrc": null },
+      "regular":  { "available": true,  "glyphSrc": null }
     },
     "morph": { "enabled": false, "svgDir": null },
     "topics": ["water"],
@@ -23,13 +33,23 @@
     "radical": "川",
     "strokes": 3,
     "meanings": ["河流"],
-    "etymology": "(占位)甲骨文像两岸夹一水的形状。",
+    "etymology": {
+      "intro": "(占位)甲骨文像两岸夹一水的形状。",
+      "stages": [
+        { "script": "oracle",   "text": "(占位)甲骨阶段。" },
+        { "script": "bronze",   "text": "(占位)金文阶段。" },
+        { "script": "seal",     "text": "(占位)小篆阶段。" },
+        { "script": "clerical", "text": "(占位)隶书阶段。" },
+        { "script": "regular",  "text": "(占位)楷书阶段。" }
+      ],
+      "modern": "(占位)现代用法。"
+    },
     "scripts": {
-      "oracle":   { "available": true,  "font": "oracle" },
-      "bronze":   { "available": true,  "font": "bronze" },
-      "seal":     { "available": true,  "font": "seal" },
-      "clerical": { "available": true,  "font": "clerical" },
-      "regular":  { "available": true,  "font": null }
+      "oracle":   { "available": false, "glyphSrc": null },
+      "bronze":   { "available": false, "glyphSrc": null },
+      "seal":     { "available": false, "glyphSrc": null },
+      "clerical": { "available": false, "glyphSrc": null },
+      "regular":  { "available": true,  "glyphSrc": null }
     },
     "morph": { "enabled": false, "svgDir": null },
     "topics": ["water"],
@@ -41,13 +61,23 @@
     "radical": "氵",
     "strokes": 8,
     "meanings": ["天然或人工的水道", "特指黄河"],
-    "etymology": "(占位)形声字,水形可声。",
+    "etymology": {
+      "intro": "(占位)形声字,水形可声。",
+      "stages": [
+        { "script": "oracle",   "text": "(占位)甲骨阶段。" },
+        { "script": "bronze",   "text": "(占位)金文阶段。" },
+        { "script": "seal",     "text": "(占位)小篆阶段。" },
+        { "script": "clerical", "text": "(占位)隶书阶段。" },
+        { "script": "regular",  "text": "(占位)楷书阶段。" }
+      ],
+      "modern": "(占位)现代用法。"
+    },
     "scripts": {
-      "oracle":   { "available": false, "font": null },
-      "bronze":   { "available": true,  "font": "bronze" },
-      "seal":     { "available": true,  "font": "seal" },
-      "clerical": { "available": true,  "font": "clerical" },
-      "regular":  { "available": true,  "font": null }
+      "oracle":   { "available": false, "glyphSrc": null },
+      "bronze":   { "available": false, "glyphSrc": null },
+      "seal":     { "available": false, "glyphSrc": null },
+      "clerical": { "available": false, "glyphSrc": null },
+      "regular":  { "available": true,  "glyphSrc": null }
     },
     "morph": { "enabled": false, "svgDir": null },
     "topics": ["water"],
@@ -59,13 +89,23 @@
     "radical": "雨",
     "strokes": 8,
     "meanings": ["从云层降落的水滴"],
-    "etymology": "(占位)甲骨文上为天,下数点为水滴。",
+    "etymology": {
+      "intro": "(占位)甲骨文上为天,下数点为水滴。",
+      "stages": [
+        { "script": "oracle",   "text": "(占位)甲骨阶段。" },
+        { "script": "bronze",   "text": "(占位)金文阶段。" },
+        { "script": "seal",     "text": "(占位)小篆阶段。" },
+        { "script": "clerical", "text": "(占位)隶书阶段。" },
+        { "script": "regular",  "text": "(占位)楷书阶段。" }
+      ],
+      "modern": "(占位)现代用法。"
+    },
     "scripts": {
-      "oracle":   { "available": true,  "font": "oracle" },
-      "bronze":   { "available": true,  "font": "bronze" },
-      "seal":     { "available": true,  "font": "seal" },
-      "clerical": { "available": true,  "font": "clerical" },
-      "regular":  { "available": true,  "font": null }
+      "oracle":   { "available": false, "glyphSrc": null },
+      "bronze":   { "available": false, "glyphSrc": null },
+      "seal":     { "available": false, "glyphSrc": null },
+      "clerical": { "available": false, "glyphSrc": null },
+      "regular":  { "available": true,  "glyphSrc": null }
     },
     "morph": { "enabled": false, "svgDir": null },
     "topics": ["water"],
@@ -77,13 +117,23 @@
     "radical": "人",
     "strokes": 2,
     "meanings": ["能制造工具进行劳动的高等动物"],
-    "etymology": "(占位)甲骨文像人侧身站立之形。",
+    "etymology": {
+      "intro": "(占位)甲骨文像人侧身站立之形。",
+      "stages": [
+        { "script": "oracle",   "text": "(占位)甲骨阶段。" },
+        { "script": "bronze",   "text": "(占位)金文阶段。" },
+        { "script": "seal",     "text": "(占位)小篆阶段。" },
+        { "script": "clerical", "text": "(占位)隶书阶段。" },
+        { "script": "regular",  "text": "(占位)楷书阶段。" }
+      ],
+      "modern": "(占位)现代用法。"
+    },
     "scripts": {
-      "oracle":   { "available": true,  "font": "oracle" },
-      "bronze":   { "available": true,  "font": "bronze" },
-      "seal":     { "available": true,  "font": "seal" },
-      "clerical": { "available": true,  "font": "clerical" },
-      "regular":  { "available": true,  "font": null }
+      "oracle":   { "available": false, "glyphSrc": null },
+      "bronze":   { "available": false, "glyphSrc": null },
+      "seal":     { "available": false, "glyphSrc": null },
+      "clerical": { "available": false, "glyphSrc": null },
+      "regular":  { "available": true,  "glyphSrc": null }
     },
     "morph": { "enabled": false, "svgDir": null },
     "topics": ["human"],
@@ -95,13 +145,23 @@
     "radical": "大",
     "strokes": 3,
     "meanings": ["在面积、体积、容量、数量等方面超过一般"],
-    "etymology": "(占位)甲骨文像人正面张开手脚之形。",
+    "etymology": {
+      "intro": "(占位)甲骨文像人正面张开手脚之形。",
+      "stages": [
+        { "script": "oracle",   "text": "(占位)甲骨阶段。" },
+        { "script": "bronze",   "text": "(占位)金文阶段。" },
+        { "script": "seal",     "text": "(占位)小篆阶段。" },
+        { "script": "clerical", "text": "(占位)隶书阶段。" },
+        { "script": "regular",  "text": "(占位)楷书阶段。" }
+      ],
+      "modern": "(占位)现代用法。"
+    },
     "scripts": {
-      "oracle":   { "available": true,  "font": "oracle" },
-      "bronze":   { "available": true,  "font": "bronze" },
-      "seal":     { "available": true,  "font": "seal" },
-      "clerical": { "available": true,  "font": "clerical" },
-      "regular":  { "available": true,  "font": null }
+      "oracle":   { "available": false, "glyphSrc": null },
+      "bronze":   { "available": false, "glyphSrc": null },
+      "seal":     { "available": false, "glyphSrc": null },
+      "clerical": { "available": false, "glyphSrc": null },
+      "regular":  { "available": true,  "glyphSrc": null }
     },
     "morph": { "enabled": false, "svgDir": null },
     "topics": ["human"],
@@ -113,13 +173,23 @@
     "radical": "立",
     "strokes": 5,
     "meanings": ["站立", "直立"],
-    "etymology": "(占位)甲骨文像人站在地上之形。",
+    "etymology": {
+      "intro": "(占位)甲骨文像人站在地上之形。",
+      "stages": [
+        { "script": "oracle",   "text": "(占位)甲骨阶段。" },
+        { "script": "bronze",   "text": "(占位)金文阶段。" },
+        { "script": "seal",     "text": "(占位)小篆阶段。" },
+        { "script": "clerical", "text": "(占位)隶书阶段。" },
+        { "script": "regular",  "text": "(占位)楷书阶段。" }
+      ],
+      "modern": "(占位)现代用法。"
+    },
     "scripts": {
-      "oracle":   { "available": true,  "font": "oracle" },
-      "bronze":   { "available": true,  "font": "bronze" },
-      "seal":     { "available": true,  "font": "seal" },
-      "clerical": { "available": true,  "font": "clerical" },
-      "regular":  { "available": true,  "font": null }
+      "oracle":   { "available": false, "glyphSrc": null },
+      "bronze":   { "available": false, "glyphSrc": null },
+      "seal":     { "available": false, "glyphSrc": null },
+      "clerical": { "available": false, "glyphSrc": null },
+      "regular":  { "available": true,  "glyphSrc": null }
     },
     "morph": { "enabled": false, "svgDir": null },
     "topics": ["human"],
@@ -131,13 +201,23 @@
     "radical": "人",
     "strokes": 4,
     "meanings": ["跟随", "顺从"],
-    "etymology": "(占位)甲骨文为两人一前一后,会跟随之意。",
+    "etymology": {
+      "intro": "(占位)甲骨文为两人一前一后,会跟随之意。",
+      "stages": [
+        { "script": "oracle",   "text": "(占位)甲骨阶段。" },
+        { "script": "bronze",   "text": "(占位)金文阶段。" },
+        { "script": "seal",     "text": "(占位)小篆阶段。" },
+        { "script": "clerical", "text": "(占位)隶书阶段。" },
+        { "script": "regular",  "text": "(占位)楷书阶段。" }
+      ],
+      "modern": "(占位)现代用法。"
+    },
     "scripts": {
-      "oracle":   { "available": true,  "font": "oracle" },
-      "bronze":   { "available": true,  "font": "bronze" },
-      "seal":     { "available": true,  "font": "seal" },
-      "clerical": { "available": true,  "font": "clerical" },
-      "regular":  { "available": true,  "font": null }
+      "oracle":   { "available": false, "glyphSrc": null },
+      "bronze":   { "available": false, "glyphSrc": null },
+      "seal":     { "available": false, "glyphSrc": null },
+      "clerical": { "available": false, "glyphSrc": null },
+      "regular":  { "available": true,  "glyphSrc": null }
     },
     "morph": { "enabled": false, "svgDir": null },
     "topics": ["human"],
@@ -149,13 +229,23 @@
     "radical": "山",
     "strokes": 3,
     "meanings": ["地面形成的高耸部分"],
-    "etymology": "(占位)甲骨文象三峰并立之形。",
+    "etymology": {
+      "intro": "(占位)甲骨文象三峰并立之形。",
+      "stages": [
+        { "script": "oracle",   "text": "(占位)甲骨阶段。" },
+        { "script": "bronze",   "text": "(占位)金文阶段。" },
+        { "script": "seal",     "text": "(占位)小篆阶段。" },
+        { "script": "clerical", "text": "(占位)隶书阶段。" },
+        { "script": "regular",  "text": "(占位)楷书阶段。" }
+      ],
+      "modern": "(占位)现代用法。"
+    },
     "scripts": {
-      "oracle":   { "available": true,  "font": "oracle" },
-      "bronze":   { "available": true,  "font": "bronze" },
-      "seal":     { "available": true,  "font": "seal" },
-      "clerical": { "available": true,  "font": "clerical" },
-      "regular":  { "available": true,  "font": null }
+      "oracle":   { "available": false, "glyphSrc": null },
+      "bronze":   { "available": false, "glyphSrc": null },
+      "seal":     { "available": false, "glyphSrc": null },
+      "clerical": { "available": false, "glyphSrc": null },
+      "regular":  { "available": true,  "glyphSrc": null }
     },
     "morph": { "enabled": false, "svgDir": null },
     "topics": [],
@@ -167,13 +257,23 @@
     "radical": "日",
     "strokes": 4,
     "meanings": ["太阳", "白天"],
-    "etymology": "(占位)甲骨文象太阳之形,中一点表示太阳的实体。",
+    "etymology": {
+      "intro": "(占位)甲骨文象太阳之形,中一点表示太阳的实体。",
+      "stages": [
+        { "script": "oracle",   "text": "(占位)甲骨阶段。" },
+        { "script": "bronze",   "text": "(占位)金文阶段。" },
+        { "script": "seal",     "text": "(占位)小篆阶段。" },
+        { "script": "clerical", "text": "(占位)隶书阶段。" },
+        { "script": "regular",  "text": "(占位)楷书阶段。" }
+      ],
+      "modern": "(占位)现代用法。"
+    },
     "scripts": {
-      "oracle":   { "available": true,  "font": "oracle" },
-      "bronze":   { "available": true,  "font": "bronze" },
-      "seal":     { "available": true,  "font": "seal" },
-      "clerical": { "available": true,  "font": "clerical" },
-      "regular":  { "available": true,  "font": null }
+      "oracle":   { "available": false, "glyphSrc": null },
+      "bronze":   { "available": false, "glyphSrc": null },
+      "seal":     { "available": false, "glyphSrc": null },
+      "clerical": { "available": false, "glyphSrc": null },
+      "regular":  { "available": true,  "glyphSrc": null }
     },
     "morph": { "enabled": false, "svgDir": null },
     "topics": [],

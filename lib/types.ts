@@ -5,8 +5,20 @@ export type ScriptKey = z.infer<typeof ScriptKey>;
 
 export const ScriptInfo = z.object({
   available: z.boolean(),
-  font: z.string().nullable(),
+  glyphSrc: z.string().nullable(),
 });
+
+export const EtymologyStage = z.object({
+  script: ScriptKey,
+  text: z.string().min(1),
+});
+
+export const Etymology = z.object({
+  intro: z.string().min(1),
+  stages: z.array(EtymologyStage).length(5),
+  modern: z.string().min(1),
+});
+export type Etymology = z.infer<typeof Etymology>;
 
 export const Character = z.object({
   char: z.string().length(1),
@@ -14,7 +26,7 @@ export const Character = z.object({
   radical: z.string(),
   strokes: z.number().int().positive(),
   meanings: z.array(z.string()).min(1),
-  etymology: z.string(),
+  etymology: Etymology,
   scripts: z.object({
     oracle: ScriptInfo,
     bronze: ScriptInfo,
