@@ -670,16 +670,16 @@
     },
     "scripts": {
       "oracle": {
-        "available": false,
-        "glyphSrc": null
+        "available": true,
+        "glyphSrc": "/glyphs/日/oracle.svg"
       },
       "bronze": {
-        "available": false,
-        "glyphSrc": null
+        "available": true,
+        "glyphSrc": "/glyphs/日/bronze.svg"
       },
       "seal": {
-        "available": false,
-        "glyphSrc": null
+        "available": true,
+        "glyphSrc": "/glyphs/日/seal.svg"
       },
       "clerical": {
         "available": true,
@@ -740,16 +740,16 @@
     },
     "scripts": {
       "oracle": {
-        "available": false,
-        "glyphSrc": null
+        "available": true,
+        "glyphSrc": "/glyphs/月/oracle.svg"
       },
       "bronze": {
-        "available": false,
-        "glyphSrc": null
+        "available": true,
+        "glyphSrc": "/glyphs/月/bronze.svg"
       },
       "seal": {
-        "available": false,
-        "glyphSrc": null
+        "available": true,
+        "glyphSrc": "/glyphs/月/seal.svg"
       },
       "clerical": {
         "available": true,
@@ -810,16 +810,16 @@
     },
     "scripts": {
       "oracle": {
-        "available": false,
-        "glyphSrc": null
+        "available": true,
+        "glyphSrc": "/glyphs/车/oracle.svg"
       },
       "bronze": {
-        "available": false,
-        "glyphSrc": null
+        "available": true,
+        "glyphSrc": "/glyphs/车/bronze.svg"
       },
       "seal": {
-        "available": false,
-        "glyphSrc": null
+        "available": true,
+        "glyphSrc": "/glyphs/车/seal.svg"
       },
       "clerical": {
         "available": true,
@@ -877,16 +877,16 @@
     },
     "scripts": {
       "oracle": {
-        "available": false,
-        "glyphSrc": null
+        "available": true,
+        "glyphSrc": "/glyphs/马/oracle.svg"
       },
       "bronze": {
-        "available": false,
-        "glyphSrc": null
+        "available": true,
+        "glyphSrc": "/glyphs/马/bronze.svg"
       },
       "seal": {
-        "available": false,
-        "glyphSrc": null
+        "available": true,
+        "glyphSrc": "/glyphs/马/seal.svg"
       },
       "clerical": {
         "available": true,

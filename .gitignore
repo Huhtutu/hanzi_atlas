@@ -16,7 +16,8 @@ next-env.d.ts
 # 构建产物
 data/search-index.json
 public/search-index.json
-public/glyphs/
+# 注意:public/glyphs/ 下的 SVG 是版本管理的(手工制作或字体生成)
+# 不要 gitignore 它们,否则字形文件会丢失
 
 # Claude Code 工作树
 .claude/
