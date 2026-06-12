@@ -256,17 +256,101 @@
     "pinyin": ["rì"],
     "radical": "日",
     "strokes": 4,
-    "meanings": ["太阳", "白天"],
+    "meanings": ["太阳", "白天", "一昼夜", "时光、时日"],
     "etymology": {
-      "intro": "(占位)甲骨文象太阳之形,中一点表示太阳的实体。",
+      "intro": "「日」是独体象形字,本义为太阳。古人取太阳之圆形,并以中间一点表示日中之精,以与圆形的「囗」相区别。",
       "stages": [
-        { "script": "oracle",   "text": "(占位)甲骨阶段。" },
-        { "script": "bronze",   "text": "(占位)金文阶段。" },
-        { "script": "seal",     "text": "(占位)小篆阶段。" },
-        { "script": "clerical", "text": "(占位)隶书阶段。" },
-        { "script": "regular",  "text": "(占位)楷书阶段。" }
+        { "script": "oracle",   "text": "甲骨文阶段,「日」作圆形或近椭圆,内有一点或一短横,象太阳之轮廓,中点示其有质,以别于纯空圆。" },
+        { "script": "bronze",   "text": "金文阶段,外廓由圆趋方,内部点画延长为短横,笔势已显规整,但仍保留象形意味。" },
+        { "script": "seal",     "text": "小篆阶段,外廓定为方形,中间一短横居中,线条粗细均匀,书写规整,从象形过渡到符号。" },
+        { "script": "clerical", "text": "隶书阶段,字形进一步方扁化,转折由弧改折,起收笔有蚕头雁尾意味,已接近今体。" },
+        { "script": "regular",  "text": "楷书阶段,结构平正端方,横平竖直,「日」字最终定型为今日所见之形。" }
       ],
-      "modern": "(占位)现代用法。"
+      "modern": "现代汉语中,「日」既指太阳,也表白天与昼夜之一日,亦用于「日记、日程、节日」等词;在地名国名中常缩写为「日」(如日本)。"
+    },
+    "scripts": {
+      "oracle":   { "available": false, "glyphSrc": null },
+      "bronze":   { "available": false, "glyphSrc": null },
+      "seal":     { "available": false, "glyphSrc": null },
+      "clerical": { "available": false, "glyphSrc": null },
+      "regular":  { "available": true,  "glyphSrc": null }
+    },
+    "morph": { "enabled": false, "svgDir": null },
+    "topics": [],
+    "related": ["月", "山"]
+  },
+  {
+    "char": "月",
+    "pinyin": ["yuè"],
+    "radical": "月",
+    "strokes": 4,
+    "meanings": ["月亮", "时间单位「月」", "形如月之物"],
+    "etymology": {
+      "intro": "「月」是独体象形字,本义为月亮。古人见月常残缺不圆,故以弯钩之形表之,内加一点以别于「夕」。",
+      "stages": [
+        { "script": "oracle",   "text": "甲骨文阶段,「月」作弯钩状,开口向左或向右,内含一点,象残月之形,与「夕」(无点)同源而别。" },
+        { "script": "bronze",   "text": "金文阶段,弯钩两端逐渐收拢,内部点画延长为短横,整体趋于稳定。" },
+        { "script": "seal",     "text": "小篆阶段,字形规整化,外廓由弧线收为对称弯曲,内部两短横分明,书写已具笔顺。" },
+        { "script": "clerical", "text": "隶书阶段,弧线方折,内部两横平直,整体由竖长改为略扁,接近今体。" },
+        { "script": "regular",  "text": "楷书阶段,横折钩定型,内含两短横,结构匀称,作为部首与「肉」旁(月字旁)形近而义殊。" }
+      ],
+      "modern": "现代汉语中,「月」表月亮、月份,亦构词广泛,如「月光、月历、岁月、蜜月」等;作偏旁出现时,需注意区分「月(月亮)」与「肉月旁」。"
+    },
+    "scripts": {
+      "oracle":   { "available": false, "glyphSrc": null },
+      "bronze":   { "available": false, "glyphSrc": null },
+      "seal":     { "available": false, "glyphSrc": null },
+      "clerical": { "available": false, "glyphSrc": null },
+      "regular":  { "available": true,  "glyphSrc": null }
+    },
+    "morph": { "enabled": false, "svgDir": null },
+    "topics": [],
+    "related": ["日"]
+  },
+  {
+    "char": "车",
+    "pinyin": ["chē", "jū"],
+    "radical": "车",
+    "strokes": 4,
+    "meanings": ["陆地交通工具的总称", "带轮的器械", "象棋棋子(读 jū)"],
+    "etymology": {
+      "intro": "「车」是独体象形字,本义为车辆。甲骨文俯视取象,完整刻画车舆、车轴与两轮,字形繁复;后世逐步简省,只留中轴与轮形。",
+      "stages": [
+        { "script": "oracle",   "text": "甲骨文阶段,「车」作俯视全形,中央长横为车轴,两端各有车轮,有时连辕、衡、舆,笔画繁多。" },
+        { "script": "bronze",   "text": "金文阶段,大体保留俯视形,但辕衡部分简省,轮形或简或繁,各家异形较多。" },
+        { "script": "seal",     "text": "小篆阶段,字形线条化,只保留中轴一竖与上下轮形,左右对称,书写已具规范。" },
+        { "script": "clerical", "text": "隶书阶段,轮形简化为横画,中竖贯穿,「車」(繁体)结构定型。" },
+        { "script": "regular",  "text": "楷书阶段,繁体作「車」,简化字作「车」,以一横一竖一折一钩概括古文中的轮轴俯视图。" }
+      ],
+      "modern": "现代汉语中,「车」泛指各种陆地交通工具,如「汽车、火车、自行车」;在象棋中读 jū,为棋子名。"
+    },
+    "scripts": {
+      "oracle":   { "available": false, "glyphSrc": null },
+      "bronze":   { "available": false, "glyphSrc": null },
+      "seal":     { "available": false, "glyphSrc": null },
+      "clerical": { "available": false, "glyphSrc": null },
+      "regular":  { "available": true,  "glyphSrc": null }
+    },
+    "morph": { "enabled": false, "svgDir": null },
+    "topics": [],
+    "related": []
+  },
+  {
+    "char": "马",
+    "pinyin": ["mǎ"],
+    "radical": "马",
+    "strokes": 3,
+    "meanings": ["哺乳动物,可供乘骑、拉车", "象棋棋子", "姓"],
+    "etymology": {
+      "intro": "「马」是独体象形字,本义为马。古人侧面取象,突出马首、长鬃、四足与尾,字形随时代逐步抽象。",
+      "stages": [
+        { "script": "oracle",   "text": "甲骨文阶段,「马」作侧立马形,头颈高扬、鬃毛张举、四足分明、尾下垂,生动写实。" },
+        { "script": "bronze",   "text": "金文阶段,鬃毛与马身合并,四足简化为两笔,但仍可辨识马形轮廓。" },
+        { "script": "seal",     "text": "小篆阶段,线条化彻底完成,鬃尾以横竖排列示意,字形规整对称,已为符号。" },
+        { "script": "clerical", "text": "隶书阶段,四足化为四点底「灬」(后世繁体「馬」),字形方折,结构定型。" },
+        { "script": "regular",  "text": "楷书阶段,繁体作「馬」,简化字作「马」,以一横一竖折钩三笔概括,失象形之意而存音义。" }
+      ],
+      "modern": "现代汉语中,「马」既指马匹,也常作量词或喻词,如「人仰马翻、马到成功、一马当先」;在象棋中亦为棋子名,姓氏中亦常见。"
     },
     "scripts": {
       "oracle":   { "available": false, "glyphSrc": null },
