@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllCharacters, getCharacter, getAllTopics } from "@/lib/data";
-import EvolutionAnimation from "@/components/EvolutionAnimation";
+import EvolutionSection from "@/components/EvolutionSection";
 import CharCard from "@/components/CharCard";
 
 export async function generateStaticParams() {
@@ -23,16 +23,12 @@ export default async function CharPage({ params }: { params: Promise<{ char: str
   return (
     <article className="grid md:grid-cols-[1fr_280px] gap-12">
       <div>
-        <EvolutionAnimation c={c} />
+        <EvolutionSection c={c} />
         <dl className="grid grid-cols-3 gap-4 mt-10 text-sm">
           <div><dt className="text-ink/50">拼音</dt><dd>{c.pinyin.join(" / ")}</dd></div>
           <div><dt className="text-ink/50">部首</dt><dd>{c.radical}</dd></div>
           <div><dt className="text-ink/50">笔画</dt><dd>{c.strokes}</dd></div>
         </dl>
-        <section className="mt-10">
-          <h2 className="font-serif text-xl mb-2">字源</h2>
-          <p className="text-ink/85 leading-relaxed">{c.etymology}</p>
-        </section>
         <section className="mt-10">
           <h2 className="font-serif text-xl mb-2">释义</h2>
           <ol className="list-decimal list-inside space-y-1 text-ink/85">
