@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getAllCharacters, getCharacter, getAllTopics } from "@/lib/data";
 import CharCard from "@/components/CharCard";
 import { SCRIPT_ORDER, SCRIPT_LABELS, type ScriptKey } from "@/lib/types";
-import bgImage from "@/assets/img/hanzi.png";
+import headerBg from "@/assets/img/hanzi.png";
 
 export async function generateStaticParams() {
   const chars = await getAllCharacters();
@@ -23,20 +23,22 @@ export default async function CharPage({ params }: { params: Promise<{ char: str
 
   return (
     <div className="relative min-h-screen">
-      {/* 背景纹理 — 宣纸水墨风格 */}
+      {/* 顶部装饰卷轴 — 古塔远景 */}
       <div
-        className="fixed inset-0 pointer-events-none"
+        className="relative w-full h-48 md:h-64 overflow-hidden"
         style={{
-          backgroundImage: `url(${bgImage.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-          opacity: 0.06,
+          backgroundImage: `url(${headerBg.src})`,
+          backgroundSize: "contain",
+          backgroundPosition: "top center",
+          backgroundRepeat: "no-repeat",
+          opacity: 0.9,
         }}
-      />
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-paper)]" />
+      </div>
 
       {/* 顶部装饰边框 — 古籍书眉 */}
-      <div className="relative max-w-4xl mx-auto pt-8">
+      <div className="max-w-4xl mx-auto pt-6 px-4">
         <div className="flex items-center gap-3 mb-2">
           <span className="h-px flex-1 bg-[var(--color-rule)]" />
           <span className="w-2 h-2 rotate-45 border border-[var(--color-vermilion)]/40" />
@@ -91,7 +93,7 @@ export default async function CharPage({ params }: { params: Promise<{ char: str
                   <div
                     className={`rounded-sm border ${
                       info.available
-                        ? "border-[var(--color-rule)] bg-[var(--color-paper-2)]/60 backdrop-blur-[1px]"
+                        ? "border-[var(--color-rule)] bg-[var(--color-paper-2)]/60"
                         : "border-dashed border-[var(--color-rule)] bg-[var(--color-paper)]/20"
                     } p-4 mb-2 transition-shadow hover:shadow-sm`}
                   >
@@ -129,7 +131,7 @@ export default async function CharPage({ params }: { params: Promise<{ char: str
         </section>
 
         {/* 现代用法 */}
-        <section className="mb-14 bg-[var(--color-paper-2)]/80 backdrop-blur-[2px] border-l-2 border-[var(--color-vermilion)] px-7 py-6">
+        <section className="mb-14 bg-[var(--color-paper-2)]/80 border-l-2 border-[var(--color-vermilion)] px-7 py-6">
           <h3 className="text-[10px] tracking-[0.4em] text-[var(--color-vermilion)] mb-3">现代用法</h3>
           <p className="text-ink/85 leading-loose">{c.etymology.modern}</p>
         </section>
@@ -164,7 +166,7 @@ export default async function CharPage({ params }: { params: Promise<{ char: str
       </article>
 
       {/* 底部装饰边框 */}
-      <div className="relative max-w-4xl mx-auto pb-8 px-4">
+      <div className="max-w-4xl mx-auto pb-8 px-4">
         <div className="flex items-center gap-3">
           <span className="h-px flex-1 bg-[var(--color-rule)]" />
           <span className="w-2 h-2 rotate-45 border border-[var(--color-vermilion)]/40" />
