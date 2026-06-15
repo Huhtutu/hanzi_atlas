@@ -16,11 +16,15 @@ export default async function TopicPage({ params }: { params: Promise<{ slug: st
 
   return (
     <article>
-      <header className="border-b border-ink/10 pb-10 mb-2">
-        <div className="text-xs text-[var(--color-vermilion)] tracking-widest mb-2">专题</div>
-        <h1 className="font-serif text-4xl mb-2">{topic.title}</h1>
-        <p className="text-ink/60">{topic.subtitle}</p>
-        <p className="mt-8 text-ink/85 leading-relaxed max-w-2xl">{topic.intro}</p>
+      <header className="border-b border-[var(--color-rule)] pb-10 mb-4 text-center">
+        <div className="flex items-center justify-center gap-3 text-[10px] tracking-[0.4em] text-[var(--color-vermilion)] mb-4">
+          <span className="w-8 h-px bg-[var(--color-vermilion)]/40" />
+          <span>专 题</span>
+          <span className="w-8 h-px bg-[var(--color-vermilion)]/40" />
+        </div>
+        <h1 className="font-serif text-4xl text-ink tracking-wider mb-3">{topic.title}</h1>
+        <p className="text-ink/55 tracking-wider text-sm">{topic.subtitle}</p>
+        <p className="mt-8 text-ink/80 leading-loose max-w-2xl mx-auto text-left">{topic.intro}</p>
       </header>
       {topic.sections.map((s, i) => (
         <TopicSection key={i} section={s} charsById={byChar} />

@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-ink/10 mt-16">
-      <div className="max-w-5xl mx-auto px-6 py-6 text-xs text-ink/60 flex justify-between">
+    <footer className="mt-24 border-t border-[var(--color-rule)]">
+      <div className="max-w-5xl mx-auto px-6 py-8 text-xs tracking-wider text-ink/55 flex flex-col sm:flex-row sm:justify-between gap-2">
         <span>© Hanzi Atlas · 开源汉字图志</span>
-        <a href="https://github.com" className="underline">GitHub</a>
+        <a href="https://github.com/Huhtutu/hanzi_atlas" className="link-cinnabar">GitHub</a>
       </div>
     </footer>
   );

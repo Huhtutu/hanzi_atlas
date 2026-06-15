@@ -2,14 +2,71 @@
 
 @theme {
   --color-paper: #FAF7F2;
+  --color-paper-2: #F4EFE7;
   --color-ink: #1A1A1A;
+  --color-ink-soft: #4A4744;
   --color-vermilion: #A23B2D;
-  --font-serif: "Source Han Serif SC", "Noto Serif SC", ui-serif, Georgia, serif;
-  --font-sans: "Source Han Sans SC", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+  --color-vermilion-soft: #C75E4F;
+  --color-rule: rgba(26, 26, 26, 0.10);
+  --color-rule-strong: rgba(26, 26, 26, 0.18);
+  --font-serif: "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", ui-serif, Georgia, serif;
+  --font-sans: "Source Han Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", ui-sans-serif, system-ui, sans-serif;
 }
 
-html { background: var(--color-paper); color: var(--color-ink); }
-body { font-family: var(--font-serif); }
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+body {
+  font-family: var(--font-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* 朱砂虚下划线 — 古籍批注样式 */
+.link-cinnabar {
+  background-image: linear-gradient(to right, var(--color-vermilion) 50%, transparent 50%);
+  background-size: 6px 1px;
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  padding-bottom: 2px;
+  transition: background 200ms ease;
+}
+.link-cinnabar:hover {
+  background-image: linear-gradient(to right, var(--color-vermilion), var(--color-vermilion));
+  background-size: 100% 1.5px;
+}
+
+/* 章节标题左侧朱砂短线 */
+.chapter-mark {
+  position: relative;
+  padding-left: 1rem;
+}
+.chapter-mark::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  bottom: 0.35em;
+  width: 3px;
+  background: var(--color-vermilion);
+}
+
+/* 卡片细描金框 */
+.book-card {
+  background: var(--color-paper);
+  border: 1px solid var(--color-rule);
+  transition: border-color 200ms ease, background-color 200ms ease, transform 200ms ease;
+}
+.book-card:hover {
+  border-color: var(--color-vermilion);
+  background: var(--color-paper-2);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
 }

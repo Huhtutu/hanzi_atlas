@@ -37,8 +37,7 @@ export default function EvolutionAnimation({ c, onStageChange }: Props) {
     const tick = () => {
       setActive(prev => {
         const idx = SCRIPT_ORDER.indexOf(prev);
-        const next = SCRIPT_ORDER[(idx + 1) % SCRIPT_ORDER.length];
-        return next;
+        return SCRIPT_ORDER[(idx + 1) % SCRIPT_ORDER.length];
       });
     };
     const delay = active === "regular" ? REGULAR_HOLD_MS : STEP_MS;
@@ -50,33 +49,48 @@ export default function EvolutionAnimation({ c, onStageChange }: Props) {
   const src = current.glyphSrc;
 
   return (
-    <div className="flex flex-col items-center gap-6 select-none">
-      <ol className="flex items-center gap-2">
-        {SCRIPT_ORDER.map(k => {
+    <div className="flex flex-col items-center gap-8 select-none">
+      {/* 时间轴 */}
+      <ol className="flex items-center">
+        {SCRIPT_ORDER.map((k, i) => {
           const isActive = k === active;
           const info = c.scripts[k];
           return (
-            <li key={k} className="flex flex-col items-center gap-1">
-              <button
-                onClick={() => { setPlaying(false); setActive(k); }}
-                aria-label={`切换到${SCRIPT_LABELS[k]}`}
-                className={`h-3 w-3 rounded-full border transition-colors ${isActive ? "bg-vermilion border-vermilion" : "border-ink/40"}`}
-              />
-              <span className={`text-xs ${isActive ? "text-vermilion" : "text-ink/60"}`}>{SCRIPT_LABELS[k]}</span>
-              {!info.available && <span className="text-[10px] text-ink/40">暂缺</span>}
+            <li key={k} className="flex items-center">
+              <div className="flex flex-col items-center gap-2 w-16">
+                <button
+                  onClick={() => { setPlaying(false); setActive(k); }}
+                  aria-label={`切换到${SCRIPT_LABELS[k]}`}
+                  className={`h-2.5 w-2.5 rounded-full border transition-all duration-200 ${
+                    isActive
+                      ? "bg-[var(--color-vermilion)] border-[var(--color-vermilion)] scale-125"
+                      : info.available
+                      ? "border-ink/40 hover:border-[var(--color-vermilion)]"
+                      : "border-ink/20"
+                  }`}
+                />
+                <span className={`text-[11px] tracking-wider transition-colors ${
+                  isActive ? "text-[var(--color-vermilion)]" : "text-ink/60"
+                }`}>
+                  {SCRIPT_LABELS[k]}
+                </span>
+                {!info.available && (
+                  <span className="text-[9px] text-ink/35 tracking-wider">暂缺</span>
+                )}
+              </div>
+              {i < SCRIPT_ORDER.length - 1 && (
+                <span aria-hidden className="w-6 h-px bg-[var(--color-rule-strong)] -mt-5" />
+              )}
             </li>
           );
-        }).reduce<React.ReactNode[]>((acc, node, i, arr) => {
-          acc.push(node);
-          if (i < arr.length - 1) acc.push(<li key={`sep-${i}`} aria-hidden className="w-8 h-px bg-ink/20 mt-1.5" />);
-          return acc;
-        }, [])}
+        })}
       </ol>
 
+      {/* 字形画布 */}
       <button
         onClick={() => setPlaying(p => !p)}
         aria-label={playing ? "暂停演变" : "播放演变"}
-        className="relative w-64 h-64 flex items-center justify-center"
+        className="relative w-72 h-72 flex items-center justify-center rounded-sm border border-[var(--color-rule)] bg-[var(--color-paper-2)]/40 hover:border-[var(--color-rule-strong)] transition-colors group"
       >
         <AnimatePresence mode="wait">
           <motion.img
@@ -86,13 +100,18 @@ export default function EvolutionAnimation({ c, onStageChange }: Props) {
             initial={reduced ? false : { opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={reduced ? { opacity: 0 } : { opacity: 0, scale: 0.92 }}
-            transition={{ duration: reduced ? 0 : 0.22 }}
-            className="w-full h-full text-ink"
+            transition={{ duration: reduced ? 0 : 0.28, ease: "easeOut" }}
+            className="w-[78%] h-[78%] text-ink"
           />
         </AnimatePresence>
+        <span className="absolute bottom-3 right-3 text-[10px] tracking-widest text-ink/35 opacity-0 group-hover:opacity-100 transition-opacity">
+          {playing ? "点击暂停" : "点击继续"}
+        </span>
       </button>
 
-      <p className="text-xs text-ink/50">{playing ? "点击画面暂停" : "点击画面继续"}</p>
+      <p className="text-[11px] text-ink/45 tracking-widest">
+        甲骨 · 金 · 篆 · 隶 · 楷
+      </p>
     </div>
   );
 }

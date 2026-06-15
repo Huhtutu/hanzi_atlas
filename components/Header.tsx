@@ -3,14 +3,22 @@ import SearchBox from "./SearchBox";
 
 export default function Header() {
   return (
-    <header className="border-b border-ink/10 bg-paper/80 backdrop-blur sticky top-0 z-10">
-      <div className="max-w-5xl mx-auto px-6 py-3 flex items-center gap-4">
-        <Link href="/" className="font-serif text-lg tracking-wide">汉字图志</Link>
-        <div className="flex-1 max-w-sm"><SearchBox compact /></div>
-        <nav className="text-sm text-ink/70 flex gap-4">
-          <Link href="/topic/water">水</Link>
-          <Link href="/topic/human">人</Link>
-          <Link href="/about">关于</Link>
+    <header className="sticky top-0 z-30 bg-paper border-b border-[var(--color-rule)] shadow-[0_1px_0_rgba(0,0,0,0.03)]">
+      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center gap-6">
+        <Link
+          href="/"
+          className="font-serif text-xl tracking-[0.18em] text-ink hover:text-[var(--color-vermilion)] transition-colors"
+        >
+          汉字图志
+        </Link>
+        <span className="hidden md:inline-block h-4 w-px bg-[var(--color-rule-strong)]" aria-hidden />
+        <div className="flex-1 max-w-sm">
+          <SearchBox compact />
+        </div>
+        <nav className="hidden sm:flex items-center gap-5 text-sm tracking-wider text-ink/75">
+          <Link href="/topic/water" className="hover:text-[var(--color-vermilion)] transition-colors">水</Link>
+          <Link href="/topic/human" className="hover:text-[var(--color-vermilion)] transition-colors">人</Link>
+          <Link href="/about" className="hover:text-[var(--color-vermilion)] transition-colors">关于</Link>
         </nav>
       </div>
     </header>
