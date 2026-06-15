@@ -53,6 +53,34 @@ body {
   background: var(--color-vermilion);
 }
 
+/* 田字格 — 汉字书写九宫样式 */
+.tian-zi-ge {
+  position: relative;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 1.5px solid var(--color-rule-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.tian-zi-ge::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 1px dashed var(--color-rule);
+}
+.tian-zi-ge::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px dashed var(--color-rule);
+}
+
 /* 卡片细描金框 */
 .book-card {
   background: var(--color-paper);

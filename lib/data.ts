@@ -1,6 +1,6 @@
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
-import { Character, Topic } from "./types";
+import { Character, SpringAutumnChapter, Topic } from "./types";
 import { z } from "zod";
 
 const DATA = join(process.cwd(), "data");
@@ -34,6 +34,22 @@ export async function getAllTopics(): Promise<Topic[]> {
 export async function getTopic(slug: string): Promise<Topic | null> {
   const all = await getAllTopics();
   return all.find(t => t.slug === slug) ?? null;
+}
+
+let _chapters: SpringAutumnChapter[] | null = null;
+let _stories: Record<string, string> | null = null;
+
+export async function getCharacterStories(): Promise<Record<string, string>> {
+  if (_stories) return _stories;
+  _stories = JSON.parse(await readFile(join(DATA, "spring-autumn-stories.json"), "utf8"));
+  return _stories!;
+}
+
+export async function getSpringAutumnChapters(): Promise<SpringAutumnChapter[]> {
+  if (_chapters) return _chapters;
+  const raw = JSON.parse(await readFile(join(DATA, "spring-autumn.json"), "utf8"));
+  _chapters = z.array(SpringAutumnChapter).parse(raw);
+  return _chapters;
 }
 
 export function pickRandom<T>(arr: T[], n: number): T[] {

@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" class="placeholder">
-  <rect x="80" y="80" width="840" height="840" rx="40" fill="#EFEAE2" stroke="#C9C2B6" stroke-width="6"/>
-  <text x="500" y="560" text-anchor="middle" font-size="320" fill="#9A8F7A" font-family="serif">?</text>
-</svg>
+<svg width="110" height="110" version="1.1" xmlns="http://www.w3.org/2000/svg" desc="Created with imagetracer.js version 1.2.6" ><path fill="rgb(46,46,46)" stroke="rgb(46,46,46)" stroke-width="1" opacity="1" d="M 38 5 L 42 5 L 42 6.5 L 50.5 16 L 66 26.5 L 72 36.5 L 73 48.5 Q 70.5 50 72 55.5 L 64 77.5 L 60 104 L 56 102.5 L 57 74.5 L 64 48.5 L 64 44.5 L 61.5 39 L 58 41.5 L 42.5 66 L 40 66 L 40 59.5 L 43 56.5 L 53 34.5 L 47.5 27 L 40 21.5 Q 36 17.1 37 7.5 L 38 5 Z " /><path fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="1" opacity="0" d="M 0 0 L 110 0 L 110 110 L 0 110 L 0 0 Z M 38 5 L 37 8 Q 36 17 40 22 L 48 27 L 53 35 L 43 57 L 40 60 L 40 66 L 43 66 L 58 42 L 62 39 L 64 45 L 64 49 L 57 75 L 56 103 L 60 104 L 64 78 L 72 56 Q 71 50 73 49 L 72 37 L 66 27 L 51 16 L 42 7 L 42 5 L 38 5 Z " /></svg>

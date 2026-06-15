@@ -59,6 +59,15 @@ export const Topic = z.object({
 });
 export type Topic = z.infer<typeof Topic>;
 
+export const SpringAutumnChapter = z.object({
+  slug: z.string(),
+  title: z.string(),
+  subtitle: z.string(),
+  intro: z.string(),
+  chars: z.array(z.string().length(1)).min(1),
+});
+export type SpringAutumnChapter = z.infer<typeof SpringAutumnChapter>;
+
 export const SearchDoc = z.object({
   char: z.string(),
   pinyinPlain: z.string(),
