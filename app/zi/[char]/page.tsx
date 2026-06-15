@@ -23,22 +23,20 @@ export default async function CharPage({ params }: { params: Promise<{ char: str
 
   return (
     <div className="relative min-h-screen">
-      {/* 顶部装饰卷轴 — 古塔远景 */}
+      {/* 全屏背景 — 水墨古塔 */}
       <div
-        className="relative w-full h-48 md:h-64 overflow-hidden"
+        className="fixed inset-0 pointer-events-none -z-10"
         style={{
           backgroundImage: `url(${headerBg.src})`,
           backgroundSize: "contain",
-          backgroundPosition: "top center",
+          backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          opacity: 0.9,
+          opacity: 0.18,
         }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-paper)]" />
-      </div>
+      />
 
       {/* 顶部装饰边框 — 古籍书眉 */}
-      <div className="max-w-4xl mx-auto pt-6 px-4">
+      <div className="max-w-4xl mx-auto pt-8 px-4">
         <div className="flex items-center gap-3 mb-2">
           <span className="h-px flex-1 bg-[var(--color-rule)]" />
           <span className="w-2 h-2 rotate-45 border border-[var(--color-vermilion)]/40" />
