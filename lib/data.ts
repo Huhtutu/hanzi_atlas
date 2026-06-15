@@ -1,9 +1,61 @@
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
-import { Character, SpringAutumnChapter, Topic } from "./types";
+import { Character, SCRIPT_ORDER, SCRIPT_LABELS, ScriptKey, SpringAutumnChapter, Topic } from "./types";
 import { z } from "zod";
 
 const DATA = join(process.cwd(), "data");
+const GLYPHS_DIR = join(process.cwd(), "public", "glyphs");
+
+export type GlyphImage = { src: string; alt: string };
+export type ScriptGlyphs = Record<ScriptKey, GlyphImage[]>;
+
+const _glyphCache: Map<string, ScriptGlyphs> = new Map();
+
+// PNG 文件名前缀 → 五大字体类别(支持简/繁/异名,顺序敏感:更具体的写前面)
+const PNG_PREFIX_MAP: Array<[string, ScriptKey]> = [
+  ["甲骨文", "oracle"],
+  ["金文", "bronze"],
+  ["小篆", "seal"],
+  ["篆文", "seal"],
+  ["戰國文字", "seal"],
+  ["战国文字", "seal"],
+  ["隸書", "clerical"],
+  ["隶书", "clerical"],
+  ["楷書", "regular"],
+  ["楷书", "regular"],
+];
+
+export async function getCharacterGlyphs(ch: string): Promise<ScriptGlyphs> {
+  const cached = _glyphCache.get(ch);
+  if (cached) return cached;
+
+  const empty: ScriptGlyphs = { oracle: [], bronze: [], seal: [], clerical: [], regular: [] };
+  let files: string[] = [];
+  try {
+    files = await readdir(join(GLYPHS_DIR, ch));
+  } catch {
+    _glyphCache.set(ch, empty);
+    return empty;
+  }
+
+  const pngs = files.filter(f => f.toLowerCase().endsWith(".png")).sort();
+  const result: ScriptGlyphs = { oracle: [], bronze: [], seal: [], clerical: [], regular: [] };
+
+  for (const f of pngs) {
+    for (const [prefix, k] of PNG_PREFIX_MAP) {
+      if (f.startsWith(prefix + "_") || f.startsWith(prefix + ".")) {
+        result[k].push({
+          src: `/glyphs/${encodeURIComponent(ch)}/${encodeURIComponent(f)}`,
+          alt: `${ch} ${SCRIPT_LABELS[k]}`,
+        });
+        break;
+      }
+    }
+  }
+
+  _glyphCache.set(ch, result);
+  return result;
+}
 
 let _chars: Character[] | null = null;
 let _topics: Topic[] | null = null;

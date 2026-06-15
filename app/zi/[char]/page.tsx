@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getAllCharacters, getCharacter, getAllTopics } from "@/lib/data";
+import { getAllCharacters, getCharacter, getAllTopics, getCharacterGlyphs } from "@/lib/data";
 import CharCard from "@/components/CharCard";
 import { SCRIPT_ORDER, SCRIPT_LABELS, type ScriptKey } from "@/lib/types";
 import bgImage from "@/assets/img/hanzi.png";
@@ -18,6 +18,7 @@ export default async function CharPage({ params }: { params: Promise<{ char: str
 
   const all = await getAllCharacters();
   const topics = await getAllTopics();
+  const glyphs = await getCharacterGlyphs(c.char);
   const related = c.related.map(r => all.find(x => x.char === r)).filter((x): x is NonNullable<typeof x> => !!x);
   const charTopics = topics.filter(t => c.topics.includes(t.slug));
 
@@ -73,29 +74,33 @@ export default async function CharPage({ params }: { params: Promise<{ char: str
         </div>
       </div>
 
-      {/* === 中部：字形演变 — 5列从左向右 === */}
+      {/* === 中部：字形演变 — 5列从左向右,同分类可多图 === */}
       <section className="mb-12">
         <div className="grid grid-cols-5 gap-4 md:gap-6">
           {SCRIPT_ORDER.map((k: ScriptKey) => {
-            const info = c.scripts[k];
+            const imgs = glyphs[k];
             const stageText = c.etymology.stages.find(s => s.script === k)?.text ?? "";
+            const hasImg = imgs.length > 0;
             return (
               <div key={k} className="flex flex-col items-center text-center">
                 {/* 圆点标记 */}
                 <div className="w-2 h-2 rounded-full bg-[var(--color-vermilion)]/50 mb-3" />
 
-                {/* SVG 字形 */}
-                <div className={`w-full aspect-square flex items-center justify-center rounded-sm border ${
-                  info.available
+                {/* 字形展示区 — 多版本横向排布 */}
+                <div className={`w-full min-h-[6rem] flex items-center justify-center gap-1 rounded-sm border ${
+                  hasImg
                     ? "border-[var(--color-rule)] bg-[var(--color-paper-2)]/70"
                     : "border-dashed border-[var(--color-rule)] bg-[var(--color-paper)]/30"
-                } p-3 mb-3`}>
-                  {info.available ? (
-                    <img
-                      src={info.glyphSrc ?? `/glyphs/${c.char}/${k}.svg`}
-                      alt={`${c.char} ${SCRIPT_LABELS[k]}`}
-                      className="w-full h-auto"
-                    />
+                } p-2 mb-3`}>
+                  {hasImg ? (
+                    imgs.map(img => (
+                      <img
+                        key={img.src}
+                        src={img.src}
+                        alt={img.alt}
+                        className="max-h-20 w-auto object-contain"
+                      />
+                    ))
                   ) : (
                     <span className="text-ink/20 text-xs">暂缺</span>
                   )}
