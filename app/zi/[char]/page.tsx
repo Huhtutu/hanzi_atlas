@@ -24,15 +24,15 @@ export default async function CharPage({ params }: { params: Promise<{ char: str
 
   return (
     <article className="relative max-w-5xl mx-auto px-4 py-12">
-      {/* 左侧山水画背景 — 若隐若现 */}
+      {/* 山水画背景 — 若隐若现,贴在字形演变区背后 */}
       <div
-        className="fixed left-0 top-0 bottom-0 w-1/3 pointer-events-none -z-10 hidden lg:block"
+        className="absolute left-0 right-0 top-[18rem] h-[28rem] pointer-events-none -z-10"
         style={{
           backgroundImage: `url(${bgImage.src})`,
           backgroundSize: "contain",
-          backgroundPosition: "left center",
+          backgroundPosition: "left bottom",
           backgroundRepeat: "no-repeat",
-          opacity: 0.25,
+          opacity: 0.22,
         }}
       />
 
@@ -62,20 +62,28 @@ export default async function CharPage({ params }: { params: Promise<{ char: str
         </dl>
       </header>
 
-      {/* === 上方：箭头 + 圆点时间线 === */}
-      <div className="flex items-center justify-center mb-10">
-        <div className="flex items-center gap-0">
-          {/* 圆点 */}
-          <div className="w-3 h-3 rounded-full bg-[var(--color-vermilion)] shrink-0" />
-          {/* 向右箭头线 */}
-          <div className="relative h-px w-24 md:w-48 bg-[var(--color-vermilion)]/60">
-            <div className="absolute -right-1 -top-[3px] w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[8px] border-l-[var(--color-vermilion)]/60" />
+      {/* === 字形演变区 — 顶部箭头时间轴 + 5列内容 === */}
+      <section className="relative mb-14">
+        {/* 顶部贯通时间轴：横线 + 5圆点 + 末尾箭头 */}
+        <div className="relative h-3 mb-4">
+          {/* 横线 */}
+          <div className="absolute left-0 right-6 top-1/2 -translate-y-1/2 h-px bg-[var(--color-vermilion)]/70" />
+          {/* 右侧箭头头 */}
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-0 h-0
+                          border-t-[5px] border-t-transparent
+                          border-b-[5px] border-b-transparent
+                          border-l-[10px] border-l-[var(--color-vermilion)]/70" />
+          {/* 5 个圆点(对齐 5 列中心) */}
+          <div className="absolute inset-0 grid grid-cols-5">
+            {SCRIPT_ORDER.map(k => (
+              <div key={k} className="flex justify-center">
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--color-vermilion)] mt-[2px]" />
+              </div>
+            ))}
           </div>
         </div>
-      </div>
 
-      {/* === 中部：字形演变 — 5列从左向右,同分类可多图 === */}
-      <section className="mb-12">
+        {/* 5列内容：标签 → 字形堆叠 → 文字说明 */}
         <div className="grid grid-cols-5 gap-4 md:gap-6">
           {SCRIPT_ORDER.map((k: ScriptKey) => {
             const imgs = glyphs[k];
@@ -83,36 +91,29 @@ export default async function CharPage({ params }: { params: Promise<{ char: str
             const hasImg = imgs.length > 0;
             return (
               <div key={k} className="flex flex-col items-center text-center">
-                {/* 圆点标记 */}
-                <div className="w-2 h-2 rounded-full bg-[var(--color-vermilion)]/50 mb-3" />
+                {/* 顶部标签 — 朱砂色 */}
+                <span className="text-sm md:text-base text-[var(--color-vermilion)] tracking-wider mb-5">
+                  {SCRIPT_LABELS[k]}
+                </span>
 
-                {/* 字形展示区 — 多版本横向排布 */}
-                <div className={`w-full min-h-[6rem] flex items-center justify-center gap-1 rounded-sm border ${
-                  hasImg
-                    ? "border-[var(--color-rule)] bg-[var(--color-paper-2)]/70"
-                    : "border-dashed border-[var(--color-rule)] bg-[var(--color-paper)]/30"
-                } p-2 mb-3`}>
+                {/* 字形展示 — 竖向堆叠,无卡片边框 */}
+                <div className="flex flex-col items-center gap-3 mb-5 min-h-[5rem]">
                   {hasImg ? (
                     imgs.map(img => (
                       <img
                         key={img.src}
                         src={img.src}
                         alt={img.alt}
-                        className="max-h-20 w-auto object-contain"
+                        className="max-h-24 w-auto object-contain mix-blend-multiply"
                       />
                     ))
                   ) : (
-                    <span className="text-ink/20 text-xs">暂缺</span>
+                    <span className="text-ink/20 text-xs mt-6">暂缺</span>
                   )}
                 </div>
 
-                {/* 阶段标签 */}
-                <span className="text-[10px] tracking-[0.2em] text-[var(--color-vermilion)] mb-2">
-                  {SCRIPT_LABELS[k]}
-                </span>
-
                 {/* 演变文字说明 */}
-                <p className="text-[11px] text-ink/60 leading-relaxed">{stageText}</p>
+                <p className="text-[11px] md:text-xs text-ink/70 leading-relaxed">{stageText}</p>
               </div>
             );
           })}
