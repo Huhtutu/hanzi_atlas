@@ -64,20 +64,36 @@ export default async function CharPage({ params }: { params: Promise<{ char: str
 
       {/* === 字形演变区 — 顶部箭头时间轴 + 5列内容 === */}
       <section className="relative mb-14">
-        {/* 顶部贯通时间轴：横线 + 5圆点 + 末尾箭头 */}
-        <div className="relative h-3 mb-4">
-          {/* 横线 */}
-          <div className="absolute left-0 right-6 top-1/2 -translate-y-1/2 h-px bg-[var(--color-vermilion)]/70" />
-          {/* 右侧箭头头 */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-0 h-0
-                          border-t-[5px] border-t-transparent
-                          border-b-[5px] border-b-transparent
-                          border-l-[10px] border-l-[var(--color-vermilion)]/70" />
+        {/* 顶部贯通时间轴：SVG 横线 + 末尾箭头 + 5圆点对齐列中心 */}
+        <div className="relative h-4 mb-4">
+          {/* SVG 横线 + 箭头 */}
+          <svg
+            className="absolute inset-x-0 top-1/2 -translate-y-1/2 w-full h-3 overflow-visible"
+            viewBox="0 0 100 6"
+            preserveAspectRatio="none"
+            aria-hidden
+          >
+            <line
+              x1="0" y1="3" x2="98" y2="3"
+              stroke="var(--color-vermilion)"
+              strokeWidth="0.4"
+              vectorEffect="non-scaling-stroke"
+            />
+            <polyline
+              points="96,1 100,3 96,5"
+              fill="none"
+              stroke="var(--color-vermilion)"
+              strokeWidth="0.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
           {/* 5 个圆点(对齐 5 列中心) */}
           <div className="absolute inset-0 grid grid-cols-5">
             {SCRIPT_ORDER.map(k => (
-              <div key={k} className="flex justify-center">
-                <span className="w-2.5 h-2.5 rounded-full bg-[var(--color-vermilion)] mt-[2px]" />
+              <div key={k} className="flex justify-center items-center">
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--color-vermilion)]" />
               </div>
             ))}
           </div>
