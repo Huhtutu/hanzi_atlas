@@ -9,7 +9,9 @@ export default async function HomePage() {
     <>
       <HomeTitle />
 
-      <SpringAutumnGrid chapters={chapters} stories={stories} />
+      <div className="mt-20 md:mt-28">
+        <SpringAutumnGrid chapters={chapters} stories={stories} />
+      </div>
 
       <div className="text-center mt-16 pb-12">
         <div className="mx-auto w-8 h-px bg-[var(--color-rule-strong)] mb-4" />

@@ -4,8 +4,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "汉字图志 Hanzi Atlas",
+  title: "汉字图志",
   description: "搜索任意常用汉字,查看从甲骨文到楷书的字形演化。",
+  icons: {
+    icon: "./logo.svg",
+    shortcut: "./logo.svg",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
