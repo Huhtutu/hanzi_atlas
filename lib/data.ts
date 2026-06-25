@@ -1,6 +1,6 @@
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
-import { Character, SCRIPT_ORDER, SCRIPT_LABELS, ScriptKey, SpringAutumnChapter, Topic } from "./types";
+import { Character, Poem, SCRIPT_LABELS, ScriptKey, SpringAutumnChapter, Topic } from "./types";
 import { z } from "zod";
 
 const DATA = join(process.cwd(), "data");
@@ -59,6 +59,7 @@ export async function getCharacterGlyphs(ch: string): Promise<ScriptGlyphs> {
 
 let _chars: Character[] | null = null;
 let _topics: Topic[] | null = null;
+let _poems: Poem[] | null = null;
 
 export async function getAllCharacters(): Promise<Character[]> {
   if (_chars) return _chars;
@@ -86,6 +87,18 @@ export async function getAllTopics(): Promise<Topic[]> {
 export async function getTopic(slug: string): Promise<Topic | null> {
   const all = await getAllTopics();
   return all.find(t => t.slug === slug) ?? null;
+}
+
+export async function getAllPoems(): Promise<Poem[]> {
+  if (_poems) return _poems;
+  const raw = JSON.parse(await readFile(join(DATA, "poems.json"), "utf8"));
+  _poems = z.array(Poem).parse(raw);
+  return _poems;
+}
+
+export async function getPoem(slug: string): Promise<Poem | null> {
+  const all = await getAllPoems();
+  return all.find(p => p.slug === slug) ?? null;
 }
 
 let _chapters: SpringAutumnChapter[] | null = null;
