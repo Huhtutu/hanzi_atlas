@@ -59,6 +59,18 @@ export const Topic = z.object({
 });
 export type Topic = z.infer<typeof Topic>;
 
+export const Poem = z.object({
+  slug: z.string().min(1),
+  title: z.string().min(1),
+  author: z.string().min(1),
+  dynasty: z.string().min(1),
+  lines: z.array(z.string().min(1)).min(1),
+  intro: z.string().min(1),
+  appreciation: z.string().min(1),
+  tags: z.array(z.string()),
+});
+export type Poem = z.infer<typeof Poem>;
+
 export const SpringAutumnChapter = z.object({
   slug: z.string(),
   title: z.string(),

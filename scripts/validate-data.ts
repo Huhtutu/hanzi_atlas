@@ -1,6 +1,6 @@
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
-import { Character, Topic } from "../lib/types";
+import { Character, Poem, Topic } from "../lib/types";
 import { z } from "zod";
 
 const ROOT = join(process.cwd(), "data");
@@ -8,6 +8,7 @@ const ROOT = join(process.cwd(), "data");
 export interface ValidateInput {
   chars: unknown[];
   topics: unknown[];
+  poems?: unknown[];
 }
 
 export interface ValidateResult {
@@ -22,19 +23,27 @@ async function loadFromDisk(): Promise<ValidateInput> {
   const topics = await Promise.all(
     files.map(async f => JSON.parse(await readFile(join(topicDir, f), "utf8")))
   );
-  return { chars, topics };
+  let poems: unknown[] = [];
+  try {
+    poems = JSON.parse(await readFile(join(ROOT, "poems.json"), "utf8"));
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+  }
+  return { chars, topics, poems };
 }
 
 export async function validateAll(input?: ValidateInput): Promise<ValidateResult> {
   const errors: string[] = [];
-  const { chars: rawChars, topics: rawTopics } = input ?? (await loadFromDisk());
+  const { chars: rawChars, topics: rawTopics, poems: rawPoems = [] } = input ?? (await loadFromDisk());
 
   const charsParsed = z.array(Character).safeParse(rawChars);
   const topicsParsed = z.array(Topic).safeParse(rawTopics);
+  const poemsParsed = z.array(Poem).safeParse(rawPoems);
 
   if (!charsParsed.success) errors.push("characters.json schema: " + charsParsed.error.message);
   if (!topicsParsed.success) errors.push("topics schema: " + topicsParsed.error.message);
-  if (!charsParsed.success || !topicsParsed.success) return { ok: false, errors };
+  if (!poemsParsed.success) errors.push("poems.json schema: " + poemsParsed.error.message);
+  if (!charsParsed.success || !topicsParsed.success || !poemsParsed.success) return { ok: false, errors };
 
   const chars = charsParsed.data;
   const topics = topicsParsed.data;

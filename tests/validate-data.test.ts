@@ -48,4 +48,42 @@ describe("validateAll", () => {
     expect(result.ok).toBe(false);
     expect(result.errors.join("\n")).toMatch(/topic.*ghost/);
   });
+
+  it("passes for valid poems input", async () => {
+    const poems = [
+      {
+        slug: "quiet-night-thoughts",
+        title: "静夜思",
+        author: "李白",
+        dynasty: "唐",
+        lines: ["床前明月光", "疑是地上霜"],
+        intro: "一首思乡诗。",
+        appreciation: "语言清新自然。",
+        tags: ["唐诗", "思乡"],
+      },
+    ];
+
+    const result = await validateAll({ chars: [], topics: [], poems });
+
+    expect(result.ok).toBe(true);
+  });
+
+  it("reports poem schema errors", async () => {
+    const poems = [
+      {
+        slug: "quiet-night-thoughts",
+        title: "静夜思",
+        author: "李白",
+        dynasty: "唐",
+        lines: [],
+        intro: "一首思乡诗。",
+        tags: ["唐诗", "思乡"],
+      },
+    ];
+
+    const result = await validateAll({ chars: [], topics: [], poems });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toMatch(/poems\.json schema/);
+  });
 });
