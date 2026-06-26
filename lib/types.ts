@@ -68,8 +68,21 @@ export const Poem = z.object({
   intro: z.string().min(1),
   appreciation: z.string().min(1),
   tags: z.array(z.string()),
+  imageSrc: z.string().min(1).optional(),
+  imageAlt: z.string().min(1).optional(),
 });
 export type Poem = z.infer<typeof Poem>;
+
+export const Idiom = z.object({
+  slug: z.string().min(1),
+  title: z.string().min(1),
+  source: z.string().min(1),
+  story: z.string().min(1),
+  meaning: z.string().min(1),
+  usage: z.string().min(1),
+  tags: z.array(z.string()),
+});
+export type Idiom = z.infer<typeof Idiom>;
 
 export const SpringAutumnChapter = z.object({
   slug: z.string(),

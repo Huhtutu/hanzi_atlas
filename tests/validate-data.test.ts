@@ -86,4 +86,71 @@ describe("validateAll", () => {
     expect(result.ok).toBe(false);
     expect(result.errors.join("\n")).toMatch(/poems\.json schema/);
   });
+
+  it("passes for poems with optional image fields", async () => {
+    const result = await validateAll({
+      chars: [],
+      topics: [],
+      poems: [
+        {
+          slug: "jing-ye-si",
+          title: "静夜思",
+          author: "李白",
+          dynasty: "唐",
+          lines: ["床前明月光"],
+          intro: "月夜思乡。",
+          appreciation: "以月光写乡愁。",
+          tags: ["思乡"],
+          imageSrc: "/poems/jing-ye-si.jpg",
+          imageAlt: "月夜窗前的清冷光影",
+        },
+      ],
+      idioms: [],
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.errors).toEqual([]);
+  });
+
+  it("passes for valid idioms input", async () => {
+    const result = await validateAll({
+      chars: [],
+      topics: [],
+      poems: [],
+      idioms: [
+        {
+          slug: "hua-long-dian-jing",
+          title: "画龙点睛",
+          source: "唐·张彦远《历代名画记》",
+          story: "张僧繇画龙不点睛,点睛后龙破壁飞去。",
+          meaning: "比喻在关键处加上一笔,使内容生动有力。",
+          usage: "文章结尾一句点明主旨,正有画龙点睛之妙。",
+          tags: ["艺术", "关键"],
+        },
+      ],
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.errors).toEqual([]);
+  });
+
+  it("reports invalid idioms as an error", async () => {
+    const result = await validateAll({
+      chars: [],
+      topics: [],
+      poems: [],
+      idioms: [
+        {
+          slug: "broken",
+          title: "缺字段成语",
+          source: "佚名",
+          story: "缺少寓意和今用。",
+          tags: [],
+        },
+      ],
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toMatch(/idioms\.json schema/);
+  });
 });

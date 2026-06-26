@@ -1,6 +1,6 @@
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
-import { Character, Poem, Topic } from "../lib/types";
+import { Character, Idiom, Poem, Topic } from "../lib/types";
 import { z } from "zod";
 
 const ROOT = join(process.cwd(), "data");
@@ -9,6 +9,7 @@ export interface ValidateInput {
   chars: unknown[];
   topics: unknown[];
   poems?: unknown[];
+  idioms?: unknown[];
 }
 
 export interface ValidateResult {
@@ -29,21 +30,29 @@ async function loadFromDisk(): Promise<ValidateInput> {
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
   }
-  return { chars, topics, poems };
+  let idioms: unknown[] = [];
+  try {
+    idioms = JSON.parse(await readFile(join(ROOT, "idioms.json"), "utf8"));
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+  }
+  return { chars, topics, poems, idioms };
 }
 
 export async function validateAll(input?: ValidateInput): Promise<ValidateResult> {
   const errors: string[] = [];
-  const { chars: rawChars, topics: rawTopics, poems: rawPoems = [] } = input ?? (await loadFromDisk());
+  const { chars: rawChars, topics: rawTopics, poems: rawPoems = [], idioms: rawIdioms = [] } = input ?? (await loadFromDisk());
 
   const charsParsed = z.array(Character).safeParse(rawChars);
   const topicsParsed = z.array(Topic).safeParse(rawTopics);
   const poemsParsed = z.array(Poem).safeParse(rawPoems);
+  const idiomsParsed = z.array(Idiom).safeParse(rawIdioms);
 
   if (!charsParsed.success) errors.push("characters.json schema: " + charsParsed.error.message);
   if (!topicsParsed.success) errors.push("topics schema: " + topicsParsed.error.message);
   if (!poemsParsed.success) errors.push("poems.json schema: " + poemsParsed.error.message);
-  if (!charsParsed.success || !topicsParsed.success || !poemsParsed.success) return { ok: false, errors };
+  if (!idiomsParsed.success) errors.push("idioms.json schema: " + idiomsParsed.error.message);
+  if (!charsParsed.success || !topicsParsed.success || !poemsParsed.success || !idiomsParsed.success) return { ok: false, errors };
 
   const chars = charsParsed.data;
   const topics = topicsParsed.data;
