@@ -1,6 +1,6 @@
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
-import { Character, Poem, SCRIPT_LABELS, ScriptKey, SpringAutumnChapter, Topic } from "./types";
+import { Character, Idiom, Poem, SCRIPT_LABELS, ScriptKey, SpringAutumnChapter, Topic } from "./types";
 import { z } from "zod";
 
 const DATA = join(process.cwd(), "data");
@@ -60,6 +60,7 @@ export async function getCharacterGlyphs(ch: string): Promise<ScriptGlyphs> {
 let _chars: Character[] | null = null;
 let _topics: Topic[] | null = null;
 let _poems: Poem[] | null = null;
+let _idioms: Idiom[] | null = null;
 
 export async function getAllCharacters(): Promise<Character[]> {
   if (_chars) return _chars;
@@ -99,6 +100,18 @@ export async function getAllPoems(): Promise<Poem[]> {
 export async function getPoem(slug: string): Promise<Poem | null> {
   const all = await getAllPoems();
   return all.find(p => p.slug === slug) ?? null;
+}
+
+export async function getAllIdioms(): Promise<Idiom[]> {
+  if (_idioms) return _idioms;
+  const raw = JSON.parse(await readFile(join(DATA, "idioms.json"), "utf8"));
+  _idioms = z.array(Idiom).parse(raw);
+  return _idioms;
+}
+
+export async function getIdiom(slug: string): Promise<Idiom | null> {
+  const all = await getAllIdioms();
+  return all.find(i => i.slug === slug) ?? null;
 }
 
 let _chapters: SpringAutumnChapter[] | null = null;
