@@ -1,6 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="currentColor">
-  <line x1="340" y1="120" x2="340" y2="880" stroke="currentColor" stroke-width="34" stroke-linecap="round"/>
-  <path d="M340 120 C 680 150, 810 340, 810 500 C 810 660, 680 850, 340 880" fill="none" stroke="currentColor" stroke-width="34" stroke-linecap="round"/>
-  <line x1="420" y1="340" x2="630" y2="340" stroke="currentColor" stroke-width="30" stroke-linecap="round"/>
-  <line x1="420" y1="660" x2="630" y2="660" stroke="currentColor" stroke-width="30" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" class="placeholder">
+  <rect x="80" y="80" width="840" height="840" rx="40" fill="#EFEAE2" stroke="#C9C2B6" stroke-width="6"/>
+  <text x="500" y="560" text-anchor="middle" font-size="320" fill="#9A8F7A" font-family="serif">?</text>
 </svg>

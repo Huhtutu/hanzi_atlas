@@ -1,11 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="currentColor">
-  <path d="M200 340 C 280 240, 400 200, 500 220 C 600 240, 680 300, 720 380" fill="none" stroke="currentColor" stroke-width="26" stroke-linecap="round"/>
-  <path d="M200 340 L120 380 L140 520 L220 500" fill="none" stroke="currentColor" stroke-width="26" stroke-linejoin="round"/>
-  <path d="M200 520 C 350 550, 550 550, 680 520" fill="none" stroke="currentColor" stroke-width="26" stroke-linecap="round"/>
-  <path d="M720 380 C 800 400, 820 500, 780 600 C 760 650, 740 700, 720 740" fill="none" stroke="currentColor" stroke-width="26" stroke-linecap="round"/>
-  <line x1="260" y1="520" x2="240" y2="820" stroke="currentColor" stroke-width="22" stroke-linecap="round"/>
-  <line x1="360" y1="540" x2="350" y2="830" stroke="currentColor" stroke-width="22" stroke-linecap="round"/>
-  <line x1="580" y1="530" x2="570" y2="820" stroke="currentColor" stroke-width="22" stroke-linecap="round"/>
-  <line x1="660" y1="520" x2="680" y2="810" stroke="currentColor" stroke-width="22" stroke-linecap="round"/>
-  <circle cx="170" cy="440" r="16" fill="currentColor"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" class="placeholder">
+  <rect x="80" y="80" width="840" height="840" rx="40" fill="#EFEAE2" stroke="#C9C2B6" stroke-width="6"/>
+  <text x="500" y="560" text-anchor="middle" font-size="320" fill="#9A8F7A" font-family="serif">?</text>
 </svg>
