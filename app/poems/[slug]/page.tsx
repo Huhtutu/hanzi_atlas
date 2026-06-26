@@ -15,16 +15,22 @@ export default async function PoemPage({ params }: { params: Promise<{ slug: str
   return (
     <article className="max-w-3xl mx-auto">
       <Link href="/poems" className="link-cinnabar text-sm text-ink/65 hover:text-[var(--color-vermilion)]">
-        返回诗词
+        返回诗词拾萃
       </Link>
 
       <header className="text-center my-12 border-b border-[var(--color-rule)] pb-10">
-        <div className="text-[10px] tracking-[0.4em] text-[var(--color-vermilion)] mb-4">诗 词 赏 析</div>
+        <div className="text-[10px] tracking-[0.4em] text-[var(--color-vermilion)] mb-4">诗 词 拾 萃</div>
         <h1 className="font-serif text-4xl text-ink tracking-wider mb-4">{poem.title}</h1>
         <p className="text-ink/55 tracking-wider text-sm">{poem.dynasty} · {poem.author}</p>
       </header>
 
-      <section className="text-center font-serif text-2xl leading-loose text-ink mb-12">
+      {poem.imageSrc && (
+        <div className="mb-10 overflow-hidden rounded-sm border border-[var(--color-rule)] bg-[var(--color-paper-2)]">
+          <img src={poem.imageSrc} alt={poem.imageAlt ?? poem.title} className="w-full max-h-[28rem] object-cover mix-blend-multiply" />
+        </div>
+      )}
+
+      <section className="text-center font-serif text-2xl leading-[2.4] text-ink mb-12">
         {poem.lines.map(line => <p key={line}>{line}</p>)}
       </section>
 

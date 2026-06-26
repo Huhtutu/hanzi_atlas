@@ -16,9 +16,8 @@ export default function Header() {
           <SearchBox compact />
         </div>
         <nav className="hidden sm:flex items-center gap-5 text-sm tracking-wider text-ink/75">
-          <Link href="/topic/water" className="hover:text-[var(--color-vermilion)] transition-colors">水</Link>
-          <Link href="/topic/human" className="hover:text-[var(--color-vermilion)] transition-colors">人</Link>
-          <Link href="/poems" className="hover:text-[var(--color-vermilion)] transition-colors">诗词</Link>
+          <Link href="/poems" className="hover:text-[var(--color-vermilion)] transition-colors">诗词拾萃</Link>
+          <Link href="/idioms" className="hover:text-[var(--color-vermilion)] transition-colors">成语典故</Link>
           <Link href="/about" className="hover:text-[var(--color-vermilion)] transition-colors">关于</Link>
         </nav>
       </div>
